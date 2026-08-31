@@ -41,11 +41,11 @@ Model Building
       ↓
 State Feedback Control
       ↓
-Controller Tuning
+Controller Tuning and Optimisation
       ↓
 Model Linearisation
       ↓
-PID / PI Control
+PID / PI / Feed-forward / Cascaded PID
       ↓
 Stateflow
       ↓
@@ -53,6 +53,7 @@ Arduino & IMU Integration
       ↓
 Experimental Validation
 ```
+---
 ## Model and Control Development
 
 The robot was developed as an inverted-pendulum system using MATLAB/Simulink and Simscape Multibody.
@@ -74,14 +75,22 @@ Control development included:
 - PI control
 - Feed-forward control
 - Cascaded PID control
+---
 
 ## Model Linearisation
 
 The nonlinear robot model was linearised to obtain a state-space representation:
 
-$$ \dot{x}=Ax+Bu $$ $$ y=Cx+Du $$
+$$
+\dot{x} = Ax + Bu
+$$
+
+$$
+y = Cx + Du
+$$
 
 The linearised model was used for system analysis and controller development.
+---
 
 ## Stateflow
 
@@ -98,6 +107,7 @@ The implementation included:
 - Triggered state charts
 
 Stateflow was later used to coordinate operating modes and autonomous challenge sequences.
+---
 
 ## Sensor and Hardware Integration
 
