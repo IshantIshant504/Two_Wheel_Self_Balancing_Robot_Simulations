@@ -111,8 +111,7 @@ Stateflow was later used to coordinate operating modes and autonomous challenge 
 
 ## Sensor and Hardware Integration
 
-The project was transferred from simulation to physical hardware.
-
+The developed control system was transferred from simulation to physical hardware.
 The implementation included:
 
 - Arduino IDE
@@ -126,9 +125,11 @@ The implementation included:
 ## Experimental Challenges
 ### Challenge 1 — High-Speed Linear Motion
 
-Different controller configurations were compared.
+Different controller configurations were compared to evaluate the robot's linear-motion performance.
 
-Best documented result: 2.7 s
+Best documented result:
+
+- Completion time: 2.7 s
 
 ### Challenge 2 — Position Control and 360° Rotation
 
@@ -139,7 +140,7 @@ The robot was developed to:
 - Use IMU-based yaw measurements
 - Use PI control and Stateflow logic
   
-### Final Documented Deviations
+### Documented Deviations
 
 | Test | Deviation |
 |------|-----------|
@@ -151,7 +152,7 @@ The robot was developed to:
 
 ### Challenge 3 — Additional Weight Compensation
 
-The robot was tested under additional load.
+The robot was tested under additional load to evaluate the robustness of the balancing and control system.
 
 - Initial documented load: 570 g
 - Improved cascaded PID test: 1120 g
@@ -161,20 +162,24 @@ The final challenge focused on autonomous trajectory tracking.
 
 Documented result:
 
-- 100% track following
-- 8.4 s completion time
+- Track following: 100%
+- Completion time: 8.4 s
 
 ## Key Achievements
 - Developed a two-wheel inverted-pendulum model.
-- Implemented four-state feedback control.
+- Analysed the system using four state variables.
+- Implemented state-feedback control.
 - Performed controller tuning and optimisation.
-- Linearised the nonlinear model.
-- Developed Stateflow-based supervisory logic.
+- Linearised the nonlinear robot model.
+- Developed PID, PI, feed-forward, and cascaded control strategies.
+- Implemented Stateflow-based supervisory logic.
 - Integrated IMU sensor processing.
-- Implemented PID, PI, feed-forward and cascaded PID control.
+- Implemented the developed system on Arduino-based hardware.
+- Integrated BLDC motor control.
 - Achieved 2.7 s in the documented linear-motion controller comparison.
-- Demonstrated operation with 1120 g applied load.
-- Achieved 100% figure-8 track following in 8.4 s.
+- Demonstrated operation with an additional 1120 g load.
+- Achieved 100% track following in the Figure-8 challenge.
+- Completed the Figure-8 trajectory in 8.4 s.
 
 ## Technologies Used
 
@@ -191,7 +196,7 @@ Documented result:
 - State Feedback
 - PID
 - PI
-- Cascaded PID
+- Cascaded PID Control
 - Feed-forward Control
 - Model Linearisation
 
