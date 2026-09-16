@@ -49,17 +49,3 @@ The IMU data was connected to Mux/Demux blocks and monitored using a Scope. Data
 Detailed IMU processing and sensor integration are covered separately in:
 
 [03 - IMU Integration](../03_IMU_Integration/)
-
-## Test Flow
-
-```text
-Simulink Model
-      ↓
-Arduino Deployment
-      ↓
-Digital Output Test
-      ↓
-Sensor Input Test
-      ↓
-IMU Data
-```
