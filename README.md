@@ -1,207 +1,114 @@
 # Two_Wheel_Self_Balancing_Robot_Simulations
 
+Two-wheel self-balancing robot developed using **MATLAB/Simulink, Simscape Multibody, Stateflow, Arduino and IMU-# Two_Wheel_Self_Balancing_Robot_Simulations
+
 Two-wheel self-balancing robot developed using **MATLAB/Simulink, Simscape Multibody, Stateflow, Arduino and IMU-based sensor integration**.
 
+This project covers the modelling, control development, sensor integration and experimental validation of a two-wheel self-balancing robot.
 
+## Project Sections
 
-## Project Overview
+### 01 — Inverted Pendulum Development
 
-This project focuses on the modelling, control and experimental validation of a two-wheel self-balancing robot.
+Development of the inverted-pendulum model and initial state-feedback control using MATLAB/Simulink and Simscape Multibody.
 
-The development included:
-
-- Dynamic model development
+**Key topics:**
+- Dynamic modelling
+- Four-state representation
 - State-feedback control
-- Controller tuning and optimisation
+- Controller tuning
 - Model linearisation
-- PID and PI control
-- Stateflow-based control logic
-- IMU sensor integration
-- Arduino/embedded implementation
-- Experimental validation
+
+[View Inverted Pendulum Development →](./01_Inverted_Pendulum/)
 
 ---
 
-## Objectives
+### 02 — Arduino Basics
 
-- Develop a dynamic model of a two-wheel self-balancing robot.
-- Stabilise the inverted-pendulum system.
-- Analyse the system using four state variables.
-- Develop and optimise controllers.
-- Implement Stateflow-based control logic.
-- Integrate IMU sensor data.
-- Validate the developed control strategies through practical experiments.
+Basic Arduino and hardware development used as part of the robot implementation.
+
+[View Arduino Basics →](./02_Arduino_Basics/)
 
 ---
 
-## Development Workflow
+### 03 — IMU Integration
 
-```text
-Model Building
-      ↓
-State Feedback Control
-      ↓
-Controller Tuning and Optimisation
-      ↓
-Model Linearisation
-      ↓
-PID / PI / Feed-forward / Cascaded PID
-      ↓
-Stateflow
-      ↓
-Arduino & IMU Integration
-      ↓
-Experimental Validation
-```
----
-## Model and Control Development
+Integration and processing of IMU sensor data for robot orientation and motion estimation.
 
-The robot was developed as an inverted-pendulum system using MATLAB/Simulink and Simscape Multibody.
+**Key topics:**
+- IMU integration
+- Yaw-rate processing
+- Yaw-angle estimation
+- Complementary filtering
 
-The system considered four main states:
+[View IMU Integration →](./03_IMU_Integration/)
 
-- θ — Robot body angle
-- X — Position
-- θ̇ — Angular velocity
-- Ẋ — Linear velocity
-
-Control development included:
-
-- State-feedback control
-- Manual gain tuning
-- Control System Designer
-- Control System Tuner
-- PID control
-- PI control
-- Feed-forward control
-- Cascaded PID control
 ---
 
-## Model Linearisation
+### 04 — Stateflow
 
-The nonlinear robot model was linearised to obtain a state-space representation:
+Development of Stateflow-based control and supervisory logic.
 
-$$
-\dot{x} = Ax + Bu
-$$
-
-$$
-y = Cx + Du
-$$
-
-The linearised model was used for system analysis and controller development.
----
-
-## Stateflow
-
-Stateflow was used for supervisory and event-based control.
-
-The implementation included:
-
+**Key topics:**
 - State transitions
-- Input/output ports
 - Truth tables
 - Superstates
 - Parallel states
 - Simulink Functions
 - Triggered state charts
 
-Stateflow was later used to coordinate operating modes and autonomous challenge sequences.
+[View Stateflow →](./04_Stateflow/)
+
 ---
 
-## Sensor and Hardware Integration
+### 05 — Final Challenges
 
-The developed control system was transferred from simulation to physical hardware.
-The implementation included:
+Experimental challenges combining the developed modelling, control, Stateflow and hardware components.
 
-- Arduino IDE
-- Simulink hardware deployment
-- BLDC motor control
-- IMU sensor integration
-- Yaw-rate processing
-- Yaw-angle estimation
-- Complementary filtering
+**Challenges include:**
+- High-speed linear motion
+- Position control and 360° rotation
+- Additional weight compensation
+- Figure-8 trajectory tracking
 
-## Experimental Challenges
-### Challenge 1 — High-Speed Linear Motion
+[View Final Challenges →](./05_Final_Challenges/)
 
-Different controller configurations were compared to evaluate the robot's linear-motion performance.
+## Key Results
 
-Best documented result:
+| Challenge | Documented Result |
+|---|---:|
+| High-speed linear motion | 2.7 s |
+| Position control — 1 m | 1 cm deviation |
+| Position control — 2 m | 2 cm deviation |
+| Position control — 3 m | 3 cm deviation |
+| First rotation | 4° deviation |
+| Second rotation | 6° deviation |
+| Additional load | 1120 g |
+| Figure-8 tracking | 100% |
+| Figure-8 completion | 8.4 s |
 
-- Completion time: 2.7 s
-
-### Challenge 2 — Position Control and 360° Rotation
-
-The robot was developed to:
-
-- Reach defined positions
-- Perform two 360° rotations
-- Use IMU-based yaw measurements
-- Use PI control and Stateflow logic
-  
-### Documented Deviations
-
-| Test | Deviation |
-|------|-----------|
-| 1 m | 1 cm |
-| 2 m | 2 cm |
-| 3 m | 3 cm |
-| First rotation | 4° |
-| Second rotation | 6° |
-
-### Challenge 3 — Additional Weight Compensation
-
-The robot was tested under additional load to evaluate the robustness of the balancing and control system.
-
-- Initial documented load: 570 g
-- Improved cascaded PID test: 1120 g
-### Challenge 4 — Figure-8 Trajectory
-
-The final challenge focused on autonomous trajectory tracking.
-
-Documented result:
-
-- Track following: 100%
-- Completion time: 8.4 s
-
-## Key Achievements
-- Developed a two-wheel inverted-pendulum model.
-- Analysed the system using four state variables.
-- Implemented state-feedback control.
-- Performed controller tuning and optimisation.
-- Linearised the nonlinear robot model.
-- Developed PID, PI, feed-forward, and cascaded control strategies.
-- Implemented Stateflow-based supervisory logic.
-- Integrated IMU sensor processing.
-- Implemented the developed system on Arduino-based hardware.
-- Integrated BLDC motor control.
-- Achieved 2.7 s in the documented linear-motion controller comparison.
-- Demonstrated operation with an additional 1120 g load.
-- Achieved 100% track following in the Figure-8 challenge.
-- Completed the Figure-8 trajectory in 8.4 s.
-
-## Technologies Used
+## Technologies
 
 ### Software
-
 - MATLAB
 - Simulink
 - Simscape Multibody
 - Stateflow
 - Arduino IDE
 
-### Control Engineering
-
+### Control
 - State Feedback
 - PID
 - PI
-- Cascaded PID Control
+- Cascaded PID
 - Feed-forward Control
 - Model Linearisation
 
 ### Hardware
-
+- Arduino
 - BLDC motors
 - IMU sensor
-- Arduino
+
+## Project Report
+
+[View Project Report →](./REPORT_For_SLRD.pdf)
