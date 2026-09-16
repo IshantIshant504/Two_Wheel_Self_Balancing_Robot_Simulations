@@ -65,13 +65,4 @@ The sensor output was observed in Simulink to verify that the data was being rec
 
 The IMU integration was then used as part of the robot's balancing and motion-control development.
 
-## Related Sections
-
-- [01 Inverted Pendulum](../01_Inverted_Pendulum/)
-- [02 Arduino Basics](../02_Arduino_Basics/)
 - [04 Stateflow](../04_Stateflow/)
-- [05 Final Challenges](../05_Final_Challenges/)
-
-## Project Report
-
-- [REPORT_For_SLRD.pdf](../REPORT_For_SLRD.pdf)
